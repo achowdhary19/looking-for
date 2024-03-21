@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.main {
+  width: 40vw;
+  padding: 10px;
+  margin-top: 3vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.black {
+  border: solid 1px black;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.spacer {
+  height: 1.5vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.starsdiv {
+  height: 2.5vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.star {
+  width: 5vw;
+  /* box-shadow: 2px 2px 12px red; */
 }
 
-.card {
-  padding: 2em;
+.tab {
+  font-size: 12px;
+  padding: 2px;
 }
 
-.read-the-docs {
-  color: #888;
+.box {
+  background-color: blue;
+  width: 90px;
+  height: 60px;
+}
+
+.poem-holder {
+  /* #9eedbc; */
+  height: 24vh;
+  object-position: 0% -300px;
+}
+
+.halo {
+  border-radius: 20px;
+  box-shadow: 0px 0px 3px 5px lightblue;
+}
+
+.rounded {
+  border-radius: 30px;
+  border: 1px solid black;
+}
+.img-fluid {
+  object-fit: cover;
+  width: 100%;
+}
+
+.absolute {
+  position: absolute;
+  z-index: 2;
+  max-width: 1300px;
+}
+
+.fixed {
+  position: relative;
+}
+
+.bird {
+  width: 15vw;
+}
+.bunnies {
+  object-fit: cover;
+}
+
+.leftRound {
+  border-radius: 20px 0px 0px 20px;
+  overflow: auto;
+}
+
+.rightRound {
+  border-radius: 0px 20px 20px 0px;
+  overflow: auto;
+}
+
+#rain {
+  z-index: 10;
+}
+
+.scratch {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
