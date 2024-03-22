@@ -1,5 +1,5 @@
 
-import React, { Fragment, useRef, useEffect } from "react";
+import React, { Fragment, useRef, useEffect, useState } from "react";
 import star3 from "../assets/star3.png";
 import star2 from "../assets/star2.png";
 import star1 from "../assets/star1.png";
@@ -8,6 +8,7 @@ import cows from "../assets/cows.png";
 import twoBirds from "../assets/twobirds.png";
 import background2 from "../assets/bunniesinsnow.png"
 import overlay from "../assets/overlay.png"
+import Draggable from "react-draggable";
 
 import Scratch from "./Scratch"
 import Image from "./Image";
@@ -17,7 +18,11 @@ import { CUSTOM_BRUSH_PRESET } from "react-scratchcard-v4";
 import itch from "../assets/itch.wav";
 
   
-  export default function Container(props){
+  export default function Container(){
+    const [newItem, setNewItem] = useState("");
+    const [words, setWord] = useState([])
+    const nodeRef = React.useRef(null);
+
     const open = () => {
         window.open(
           "./src/components/popup1.html",
@@ -44,27 +49,20 @@ import itch from "../assets/itch.wav";
       noise.pause();
     };
 
+    function handleSubmit(e){
+        e.preventDefault()
+        setWord(currentWords => {
+            return [
+                ...words, 
+                {id : crypto.randomUUID(), title : newItem},
+            ] 
+        })
+    }
+    console.log(words)
+
     return(
     <>   
-      {/* <ScratchCard
-        width={320}
-        height={226}
-        image={background2}
-        finishPercent={80}
-        onComplete={() => console.log('complete')}
-      >
-        <div className ='scratch'
-        //   style={{
-        //     display: 'flex',
-        //     width: '100%',
-        //     height: '100%',
-        //     alignItems: 'center',
-        //     justifyContent: 'center'
-        //   }}
-        >
-          <h1>Scratch card</h1>
-        </div>
-      </ScratchCard>      */}
+     
        {/* 1 row (default ) with 1 big centered container  */}
       <div className="fixed d-flex justify-content-center">
         {/* 1 column of containers */}
@@ -93,7 +91,31 @@ import itch from "../assets/itch.wav";
                 }}
             ></Image> 
           <div className="box"></div>
+          <form onSubmit={handleSubmit} className = "form">
+              <div className = "d-flex">
+                  <label htmlFor="item" > What are you trying to say?</label>
+                  <input 
+                    value = {newItem} 
+                    onChange={e => setNewItem(e.target.value)} 
+                    type="text" 
+                    id="item" />
+              </div>
+              <button onClick ={ handleSubmit} >Add</button>
+          </form>
           </div>
+        
+          {words.map((word, index) => {
+              return (
+                <Draggable
+                nodeRef={nodeRef}
+                key = {index}
+                >
+                  <button className= "tab absolute" ref={nodeRef}> {word.title}</button>
+                </Draggable>
+            )
+            })}
+
+         
           <div className="spacer"></div>
           {/* third item, row of items */}
           <div>
