@@ -21,9 +21,6 @@ import itch from "../assets/itch.wav";
 
   
   export default function Container(){
-    const [newItem, setNewItem] = useState("");
-    const [words, setWord] = useState([])
-    const nodeRef = React.useRef(null);
 
     const open = () => {
         window.open(
@@ -51,16 +48,6 @@ import itch from "../assets/itch.wav";
       noise.pause();
     };
 
-    function handleSubmit(e){
-        e.preventDefault()
-        setWord(currentWords => {
-            return [
-                ...words, 
-                {id : crypto.randomUUID(), title : newItem},
-            ] 
-        })
-    }
-    console.log(words)
 
     return(
     <>   
@@ -95,35 +82,13 @@ import itch from "../assets/itch.wav";
             >
             </Image>
             <div className ="vspacer"></div> 
-            <form onSubmit={handleSubmit} className = "form">
-                <div className="d-flex flex-column box" ><label className="doveritalic" htmlFor="item" > What are you trying to say?                         <a className = "add-button" onClick ={ handleSubmit} > ↵ </a>
 
-                </label>
-                <input
-                value = {newItem}
-                onChange={e => setNewItem(e.target.value)}
-                type="text"
-                id="item" />
-                </div>             
-          
-            </form>
-
-            {words.map((word, index) => {
-              return (
-                <Draggable
-                nodeRef={nodeRef}
-                key = {index}
-                >
-                  <button className= "tab absolute" ref={nodeRef}> {word.title}</button>
-                </Draggable>
-            )
-            })}
             <Form></Form>
 
-            <div className="black d-flex aframebox">
-            <iframe src="./src/components/otherworld.html" frameBorder="0"></iframe>
-            
-            
+            <div className=" d-flex aframebox">
+              <iframe src="./src/components/otherworld.html" frameBorder="0">
+              </iframe>
+          
             </div>
           </div>
 
