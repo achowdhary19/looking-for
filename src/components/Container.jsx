@@ -10,8 +10,10 @@ import background2 from "../assets/bunniesinsnow.png"
 import overlay from "../assets/overlay.png"
 import Draggable from "react-draggable";
 
+
 import Scratch from "./Scratch"
 import Image from "./Image";
+import Form from "./Form"
 
 import ScratchCard from "react-scratchcard-v4";
 import { CUSTOM_BRUSH_PRESET } from "react-scratchcard-v4";
@@ -63,15 +65,16 @@ import itch from "../assets/itch.wav";
     return(
     <>   
      
-       {/* 1 row (default ) with 1 big centered container  */}
+       {/* 1 row (default) with 1 big centered container  */}
       <div className="fixed d-flex justify-content-center">
-        {/* 1 column of containers */}
+        {/* 1 big column of containers */}
         <div className="d-flex flex-column justify-content-center main black">
           {/* first item, row of items spaced between  */}
           <div className="d-flex starsdiv justify-content-between">
             <img className="star" src={star1} alt="" />     
-            <a className="d-flex" onClick={open} target="_blank">
-              eHtestingELLO
+            <a className="d-flex blur" onClick={open} target="_blank">
+            {/* <img className="star" src={star1} alt="" /> */}
+            Secret
             </a>
             <img className="star" src={star3} alt="" />
             <img className="star" src={star2} alt="" />
@@ -80,7 +83,7 @@ import itch from "../assets/itch.wav";
           </div>
           <div className="spacer"></div>
           {/* second item, row of items, aligned bottom relative to the cross axis */}
-          <div className="d-flex align-items-end ">
+          <div className="d-flex align-items-end flex-row ">
             {/* <img className="bird halo" src={props.image1} /> */}
             <Image 
                 className= "bird halo"
@@ -89,22 +92,23 @@ import itch from "../assets/itch.wav";
                 name: 'Katsuko Saruhashi', 
                 imageId: 'YfeOqp2' //define the object here, 
                 }}
-            ></Image> 
-          <div className="box"></div>
-          <form onSubmit={handleSubmit} className = "form">
-              <div className = "d-flex">
-                  <label htmlFor="item" > What are you trying to say?</label>
-                  <input 
-                    value = {newItem} 
-                    onChange={e => setNewItem(e.target.value)} 
-                    type="text" 
-                    id="item" />
-              </div>
-              <button onClick ={ handleSubmit} >Add</button>
-          </form>
-          </div>
-        
-          {words.map((word, index) => {
+            >
+            </Image>
+            <div className ="vspacer"></div> 
+            <form onSubmit={handleSubmit} className = "form">
+                <div className="d-flex flex-column box" ><label className="doveritalic" htmlFor="item" > What are you trying to say?                         <a className = "add-button" onClick ={ handleSubmit} > ↵ </a>
+
+                </label>
+                <input
+                value = {newItem}
+                onChange={e => setNewItem(e.target.value)}
+                type="text"
+                id="item" />
+                </div>             
+          
+            </form>
+
+            {words.map((word, index) => {
               return (
                 <Draggable
                 nodeRef={nodeRef}
@@ -114,6 +118,16 @@ import itch from "../assets/itch.wav";
                 </Draggable>
             )
             })}
+            <Form></Form>
+
+            <div className="black d-flex aframebox">
+            <iframe src="./src/components/otherworld.html" frameBorder="0"></iframe>
+            
+            
+            </div>
+          </div>
+
+          
 
          
           <div className="spacer"></div>

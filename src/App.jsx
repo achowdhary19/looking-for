@@ -7,7 +7,8 @@ import Tab from "./components/Tab"
 export default function App() {
   return (
     <> 
-      Hi 
+        <a href="./src/components/otherworld.html" target="_blank">Hi</a>
+
       <Tab></Tab>
       <Container></Container>
     </>

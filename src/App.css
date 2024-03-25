@@ -1,3 +1,54 @@
+@font-face {
+  font-family: "blur";
+  src: url("https://db.onlinewebfonts.com/t/7e8601c112331686d7e3e6b525d0793b.eot");
+  src: url("https://db.onlinewebfonts.com/t/7e8601c112331686d7e3e6b525d0793b.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/7e8601c112331686d7e3e6b525d0793b.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/7e8601c112331686d7e3e6b525d0793b.woff2")
+      format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "dover";
+  src: url("./assets/DoverSerifDisplayRegular-Web.ttf") format ("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "doveritalic";
+  src: url("./assets/DoverSerifDisplay-Italic-Web.ttf") format ("ttf");
+  /* font-weight: normal;
+  font-style: normal;
+  font-display: swap; */
+}
+
+.blur {
+  font-family: "blur";
+  letter-spacing: 8px;
+}
+
+.doveritalic {
+  font-family: "doveritalic";
+  font-style: italic;
+  letter-spacing: 4px;
+}
+
+.add-button {
+  font-style: normal;
+  font-size: 15px;
+  margin-bottom: 2px;
+  color: black;
+}
+
+a {
+  text-decoration: none !important;
+}
+
 .main {
   width: 40vw;
   padding: 10px;
@@ -9,6 +60,9 @@
 }
 .spacer {
   height: 1.5vh;
+}
+.vspacer {
+  width: 0.5vw;
 }
 
 .starsdiv {
@@ -26,9 +80,8 @@
 }
 
 .box {
-  background-color: blue;
-  width: 90px;
-  height: 60px;
+  width: 70px;
+  /* height: 60px; */
 }
 
 .poem-holder {
@@ -88,4 +141,8 @@
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.aframebox {
+  /* width: 100px; */
 }
