@@ -61,10 +61,9 @@ a {
 .spacer {
   height: 1.5vh;
 }
-.vspacer {
-  width: 0.5vw;
+.margin-left {
+  margin-left: 0.5vw;
 }
-
 .starsdiv {
   height: 2.5vh;
 }
@@ -97,7 +96,7 @@ a {
 
 .rounded {
   border-radius: 30px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .img-fluid {
   object-fit: cover;

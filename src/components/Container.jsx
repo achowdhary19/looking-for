@@ -83,9 +83,8 @@ import itch from "../assets/itch.wav";
                 }}
             >
             </Image>
-            <div className ="vspacer"></div> 
 
-            <Form></Form>
+            <Form className="margin-left"></Form>
 
             <div className=" d-flex aframebox">
               <iframe src="/looking-for/otherworld.html" frameBorder="0">

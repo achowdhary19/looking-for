@@ -22,7 +22,7 @@ export default function Form(){
    return( 
     <>
     <form onSubmit={handleSubmit2} className = "form">
-        <div className="d-flex flex-column box" >
+        <div className="d-flex margin-left flex-column box" >
             <label className="doveritalic" htmlFor="item" > What are you trying to say?                         <a className = "add-button" onClick ={ handleSubmit2} > ↵ </a>
             </label>
             <input
