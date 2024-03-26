@@ -88,7 +88,6 @@ import itch from "../assets/itch.wav";
             <div className=" d-flex aframebox">
               <iframe src="./src/components/otherworld.html" frameBorder="0">
               </iframe>
-          
             </div>
           </div>
 
