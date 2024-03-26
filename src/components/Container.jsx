@@ -10,6 +10,8 @@ import background2 from "../assets/bunniesinsnow.png"
 import overlay from "../assets/overlay.png"
 import Draggable from "react-draggable";
 
+import { Link } from 'react-router';
+
 
 import Scratch from "./Scratch"
 import Image from "./Image";
@@ -24,7 +26,7 @@ import itch from "../assets/itch.wav";
 
     const open = () => {
         window.open(
-          "./src/components/popup1.html",
+          "/popup1.html",
           "popUpWindow",
           "height=100,width=100,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes, target=_parent"
         );
@@ -47,6 +49,7 @@ import itch from "../assets/itch.wav";
     const stopAudio = () => {
       noise.pause();
     };
+
 
 
     return(
@@ -86,8 +89,9 @@ import itch from "../assets/itch.wav";
             <Form></Form>
 
             <div className=" d-flex aframebox">
-              <iframe src="./src/components/otherworld.html" frameBorder="0">
+              <iframe src="/otherworld.html" frameBorder="0">
               </iframe>
+              
             </div>
           </div>
 
