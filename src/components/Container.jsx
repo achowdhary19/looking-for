@@ -10,7 +10,6 @@ import background2 from "../assets/bunniesinsnow.png"
 import overlay from "../assets/overlay.png"
 import Draggable from "react-draggable";
 
-import { Link } from 'react-router';
 
 
 import Scratch from "./Scratch"
@@ -26,7 +25,7 @@ import itch from "../assets/itch.wav";
 
     const open = () => {
         window.open(
-          "/popup1.html",
+          "/looking-for/popup1.html",
           "popUpWindow",
           "height=100,width=100,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes, target=_parent"
         );
@@ -89,7 +88,7 @@ import itch from "../assets/itch.wav";
             <Form></Form>
 
             <div className=" d-flex aframebox">
-              <iframe src="/otherworld.html" frameBorder="0">
+              <iframe src="/looking-for/otherworld.html" frameBorder="0">
               </iframe>
               
             </div>
